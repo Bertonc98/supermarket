@@ -18,4 +18,9 @@ class ArticleService {
     fun listArticles(): List<Article>{
         return articleRepository.findAll()
     }
+
+    fun addNewArticle(newArticle: Article) {
+        println(newArticle)
+        println("Saved!")
+    }
 }
