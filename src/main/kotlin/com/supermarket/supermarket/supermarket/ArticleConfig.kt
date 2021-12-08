@@ -11,7 +11,7 @@ class ArticleConfig {
     @Bean
     fun run(articleRepository: ArticleRepository): CommandLineRunner{
             return CommandLineRunner{
-                args ->
+               /* args ->
                     var pringles = Article(
                                         "Pringles",
                                         2.39,
@@ -27,7 +27,7 @@ class ArticleConfig {
                                         13.0,
                                         Category.BOOKS
                                     );
-                    articleRepository.saveAll(listOf(pringles, jacket, hp))
+                    articleRepository.saveAll(listOf(pringles, jacket, hp))*/
             }
     }
 }
