@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 class ArticleController {
 
     private final var articleService : ArticleService
-
+    //prova
     @Autowired
     constructor(articleService: ArticleService) {
         this.articleService = articleService
