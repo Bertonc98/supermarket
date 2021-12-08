@@ -15,10 +15,10 @@ class Article {
         strategy = GenerationType.SEQUENCE,
         generator = "article_sequence"
     )
-    var id : Int
-    var name: String;
-    var price: Double = 0.0;
-    var category: Category;
+    var id : Int = -1
+    var name: String
+    var price: Double = 0.0
+    var category: Category
 
     constructor(id: Int, name: String, price: Double, category: Category) {
         this.id = id
@@ -27,6 +27,11 @@ class Article {
         this.category = category
     }
 
+    constructor(name: String, price: Double, category: Category) {
+        this.name = name
+        this.price = price
+        this.category = category
+    }
 
 
     //Code into a sort of JSON object
