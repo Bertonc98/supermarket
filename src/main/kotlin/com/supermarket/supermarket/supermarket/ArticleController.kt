@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping(path = arrayOf("api/v1/supermarket/"))
+@RequestMapping(value = ["api/v1/supermarket"])
 class ArticleController @Autowired constructor(private val articleService: ArticleService) {
 
     @GetMapping
