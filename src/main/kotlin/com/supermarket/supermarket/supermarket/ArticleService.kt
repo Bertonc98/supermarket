@@ -7,13 +7,14 @@ import org.springframework.stereotype.Component
 @Component
 class ArticleService @Autowired constructor(private val articleRepository: ArticleRepository) {
 
-    fun listArticles(): List<Article> {
-        return articleRepository.findAll()
+    fun listArticles(): List<ArticleView> {
+        return articleRepository.findAll().map { ArticleView(it) }
     }
 
-    fun addNewArticle(newArticle: Article) {
-        articleRepository.save(newArticle)
-        println(newArticle)
+    fun addNewArticle(newArticleView: ArticleView): ArticleView {
+        val article = articleRepository.save(Article(newArticleView))
+        println(article)
         println("Saved!")
+        return ArticleView(article)
     }
 }

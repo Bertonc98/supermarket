@@ -14,13 +14,13 @@ class ArticleController @Autowired constructor(private val articleService: Artic
     @GetMapping
     fun listArticles(): List<ArticleView> {
         logger.info("Executing listArticles()")
-        return articleService.listArticles().map { ArticleView(it) }
+        return articleService.listArticles()
     }
 
     @PostMapping
-    fun newArticle(@RequestBody newArticleView: ArticleView) {
+    fun newArticle(@RequestBody newArticleView: ArticleView) : ArticleView{
         logger.info("Executing newArticle()")
-        return articleService.addNewArticle(Article(newArticleView))
+        return articleService.addNewArticle(newArticleView)
     }
 
 }
