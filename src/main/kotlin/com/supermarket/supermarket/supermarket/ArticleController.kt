@@ -5,17 +5,10 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping(path = arrayOf("api/v1/supermarket/"))
-class ArticleController {
-
-    private final var articleService : ArticleService
-    //prova
-    @Autowired
-    constructor(articleService: ArticleService) {
-        this.articleService = articleService
-    }
+class ArticleController @Autowired constructor(private val articleService: ArticleService) {
 
     @GetMapping
-    fun listArticles(): List<Article>{
+    fun listArticles(): List<Article> {
         return articleService.listArticles()
     }
 

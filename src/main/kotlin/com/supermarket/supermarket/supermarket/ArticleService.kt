@@ -6,14 +6,7 @@ import org.springframework.stereotype.Component
 
 //Used to Autowired, and singleton initialization in Controller for the service. Same as @Service
 @Component
-class ArticleService {
-    private val articleRepository : ArticleRepository ;
-
-    // Dependency injection
-    @Autowired
-    constructor(articleRepository: ArticleRepository){
-        this.articleRepository = articleRepository
-    }
+class ArticleService @Autowired constructor(private val articleRepository: ArticleRepository){
 
     fun listArticles(): List<Article>{
         return articleRepository.findAll()
